@@ -1,4 +1,3 @@
-
 import express from 'express'
 import {dirname,join} from 'path'
 import morgan from 'morgan'
@@ -6,18 +5,19 @@ import { fileURLToPath } from 'url'
 import mysql from 'mysql'
 import myConnection from 'express-myconnection'
 import routes from './src/routes/routes.js'
-const app = express();
 
+const app = express();
 const PORT = 3000;
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 
 
+
 //Settings
 app.set('PORT', process.env.PORT || 3000);
 app.set('view engine','ejs');
-app.set('views', join(__dirname,'views'));
+app.set('views', join(__dirname,'./views'));
 
 
 //Middleware
